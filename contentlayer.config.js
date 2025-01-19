@@ -3,10 +3,10 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
-import rehypeShiki from '@shikijs/rehype'
+import rehypeShiki from "@shikijs/rehype";
 import readingTime from "reading-time";
 import rehypeFigure from "rehype-figure";
-
+import remarkGemoji from "remark-gemoji";
 
 /** @type {import('contentlayer2/source-files').ComputedFields} */
 const computedFields = {
@@ -25,7 +25,7 @@ const computedFields = {
   },
   readingTime: {
     type: "json",
-    resolve: (doc) => readingTime(doc.body.raw),
+    resolve: (doc) => readingTime(doc.body.raw, { wordsPerMinute: 1000 }),
   },
   headings: {
     type: "json",
@@ -120,15 +120,20 @@ export default makeSource({
   contentDirPath: "./data/content",
   documentTypes: [Post, Page],
   markdown: {
-    remarkPlugins: [remarkGfm, remarkMath],
+    remarkPlugins: [remarkGfm, remarkMath, remarkGemoji],
     rehypePlugins: [
-      [rehypeShiki,{themes: {
-        light: 'material-theme-lighter',
-        dark: 'material-theme-darker',
-      }}],
+      [
+        rehypeShiki,
+        {
+          themes: {
+            light: "material-theme-lighter",
+            dark: "material-theme-darker",
+          },
+        },
+      ],
       rehypeKatex,
       rehypeSlug,
-      rehypeFigure
+      rehypeFigure,
     ],
   },
 });

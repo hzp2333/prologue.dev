@@ -1,8 +1,7 @@
 const headerNavLinks = [
-  { href: "/blog", title: "Blog" },
-  { href: "/booklist", title: "Booklist" },
-  { href: "/about", title: "About" },
-  { href: "/links", title: "Links" },
+  { href: "/about", title: "关于作者" },
+  { href: "/links", title: "友链" },
+  { href: "/blog", title: "归档" },
 ];
 
 export default headerNavLinks;

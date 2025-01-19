@@ -1,7 +1,6 @@
 ---
 title: 文凭社会和不平等
 tags:
-  - Education
   - Sociology
 publishDate: 2023-06-27
 lastmod: 2023-07-26

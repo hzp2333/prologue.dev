@@ -11,7 +11,7 @@ export default function AboutMe() {
     .toLocaleString();
   return (
     <>
-      <h2 className="font-semibold prose-h2 pt-4">About Author</h2>
+      <h2 className="font-semibold prose-h2 pt-4">关于作者</h2>
       <Link href="/about">
         <Image
           src={siteMetadata.avatar}

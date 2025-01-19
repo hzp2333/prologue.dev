@@ -1,17 +1,36 @@
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
-import Link from "next/link";
 import siteMetadata from "../../data/sitemetadata";
-import PostCard from "../components/postcard";
 import AboutMe from "../components/aboutme";
+import Articles from "../components/articles";
 
 export default function Home() {
-  const posts = allPosts.sort((a, b) => {
-    return compareDesc(new Date(a.publishDate), new Date(b.publishDate));
-  });
+  const filterposts = allPosts
+    .sort((a, b) => {
+      return compareDesc(new Date(a.publishDate), new Date(b.publishDate));
+    })
+    .map((post) => ({
+      title: post.title,
+      description: post.description,
+      draft: post.draft,
+      featured: post.featured,
+      slug: post.slug,
+      tags: post.tags,
+    }));
+
+  const tagCount = filterposts.reduce((acc, article) => {
+    article.tags.forEach((tag) => {
+      acc[tag] = (acc[tag] || 0) + 1;
+    });
+    return acc;
+  }, {});
+
+  const mostCommonTag = Object.keys(tagCount).reduce((a, b) =>
+    tagCount[a] > tagCount[b] ? a : b
+  );
 
   return (
-    <div>
+    <div className="relative">
       <div className="mx-auto max-w-2xl py-28 max-h-screen mt-8">
         <h1 className="text-2xl font-semibold py-8">
           {siteMetadata.headerTitle}
@@ -19,54 +38,9 @@ export default function Home() {
         <p className="text-xl">{siteMetadata.description}</p>
       </div>
 
-      <div className="relative lg:grid lg:grid-cols-9 lg:gap-8 pt-12 max-w-6xl">
-        <div className="max-w-4xl mx-auto col-span-7">
-          <h2 className="pt-16 prose-h2 font-semibold">Featured</h2>
-          <div className="py-4 mb-2 md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
-            {posts
-              .filter((post) => post.draft === false && post.featured == true)
-              .slice(0, 4)
-              .map((post) => (
-                <article key={post._id} className="">
-                  <div className="leading-relaxed mx-auto max-w-sm">
-                    <PostCard
-                      title={post.title}
-                      slug={post.slug}
-                      description={post.description}
-                      publishDate={post.publishDate}
-                      readingTime={post.readingTime.text}
-                      tags={post.tags}
-                      image={post.image}
-                    />
-                  </div>
-                </article>
-              ))}
-          </div>
-          <h2 className="font-semibold prose-h2 pt-4">Latest</h2>
-          <div className="md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
-            {posts
-              .filter((post) => post.draft === false && post.featured !== true)
-              .slice(0, 10)
-              .map((post) => (
-                <article key={post._id} className="">
-                  <div className="leading-relaxed mx-auto max-w-sm">
-                    <PostCard
-                      title={post.title}
-                      slug={post.slug}
-                      description={post.description}
-                      publishDate={post.publishDate}
-                      readingTime={post.readingTime.text}
-                      tags={post.tags}
-                    />
-                  </div>
-                </article>
-              ))}
-          </div>
-          <Link href="/blog">
-            <p className="text-right text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:underline transition duration-400">
-              Read More →
-            </p>
-          </Link>
+      <div className="lg:grid lg:grid-cols-9 lg:gap-8 pt-20 max-w-6xl">
+        <div className="max-w-4xl  col-span-7 pt-12">
+          <Articles articles={filterposts} mostCommonTag={mostCommonTag} />
         </div>
         <div className="col-span-2 max-w-lg mx-auto">
           <div className="sticky top-0 pt-12">

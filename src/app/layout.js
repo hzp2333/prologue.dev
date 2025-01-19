@@ -3,6 +3,8 @@ import { Providers } from "../components/providers";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import siteMetadata from "../../data/sitemetadata";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -10,9 +12,7 @@ export const metadata = {
   applicationName: siteMetadata.siteRepo,
   referrer: "origin-when-cross-origin",
   keywords: siteMetadata.keywords,
-  authors: [
-    { name: siteMetadata.author, url: "/about" },
-  ],
+  authors: [{ name: siteMetadata.author, url: "/about" }],
   creator: siteMetadata.author,
   publisher: siteMetadata.publishName,
   title: siteMetadata.title,
@@ -42,6 +42,8 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </Providers>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

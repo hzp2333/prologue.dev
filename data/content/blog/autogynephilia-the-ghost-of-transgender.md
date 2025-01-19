@@ -3,7 +3,7 @@ title: Autogynephilia 自我女性恋：跨性别的幽灵
 image: /static/images/Estradiol.png
 publishDate: 2022-12-26
 tags:
-  - LGBT
+  - Sociology
 description: 非男性恋的MtF，对自己成为女性的想法或形象有性取向。
 lastmod: 2024-01-20
 ---
@@ -66,7 +66,7 @@ AG 和 MtF 具体现象(Lawrence, 2017)：
 - 性欲倒错，异装/跨性别幻想的性唤起
 
 在(Blanchard、Clemmensen and Steiner, 1987)中 125 名性别焦虑男性里，发现 82%的非男性恋有异装癖的性兴奋史，只有10%的男性恋有异装癖的性兴奋史，$w$衡量效应为 0.72；非男性恋在 AG 量表显著高于男性恋的得分。
-![非男性恋和AG的相关性更高](/static/images/Sexual-oreientation-autogynephila-in-MtF-figure1.png)
+![非男性恋和AG的相关性更高](/static/images/Sexual-oreientation-autogynephila-in-mtf-figure1.png)
 
 根据上表得到非男性恋比男性恋和AG 的关联更大，男性恋比起非男性恋和非 AG 关联性更大。
 
