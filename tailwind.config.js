@@ -28,12 +28,7 @@ module.exports = {
         },
         invert: {
           css: {
-            a: {
-              color: theme("colors.cyan.500"),
-              "&:hover": {
-                color: theme("colors.cyan.500"),
-              },
-            },
+
           },
         },
       }),
