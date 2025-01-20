@@ -13,7 +13,7 @@ export async function generateMetadata() {
 export default async function LinksPage() {
   const filePath = path.join(process.cwd(), "data", "links.yaml");
   const links = fs.readFileSync(filePath, "utf8");
-  const data = yaml.load(links).sort(() => Math.random() - 0.5);
+  const data = yaml.load(links);
 
   return (
     <div>

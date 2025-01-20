@@ -40,11 +40,11 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^15.0.3",
-    "@shikijs/rehype": "^1.22.2",
+    "@shikijs/rehype": "^2.0.1",
     "@tailwindcss/typography": "^0.5.15",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^10.0.1",
     "prettier": "^3.3.3",
-    "shiki": "^1.22.2"
+    "shiki": "^2.0.1"
   }
 }
