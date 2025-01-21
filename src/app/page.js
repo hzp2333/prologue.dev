@@ -16,6 +16,7 @@ export default function Home() {
       featured: post.featured,
       slug: post.slug,
       tags: post.tags,
+      publishDate: post.publishDate,
     }));
 
   const tagCount = filterposts.reduce((acc, article) => {
