@@ -10,7 +10,7 @@ const ResponsiveImage = (props) => (
     width={1920}
     height={1080}
     {...props}
-    className="drop-shadow-sm rounded"
+    className="drop-shadow-xs rounded-sm"
   />
 );
 

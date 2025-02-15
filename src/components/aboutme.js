@@ -18,7 +18,7 @@ export default function AboutMe() {
           alt="Avatar"
           width="100"
           height="100"
-          className="rounded-full max-w-md mx-auto drop-shadow mt-6 hover:shadow hover:ring-2 hover:ring-zinc-100 dark:ring-zinc-300 transition transform duration-500"
+          className="rounded-full max-w-md mx-auto drop-shadow-sm mt-6 hover:shadow-sm hover:ring-2 hover:ring-zinc-100 dark:ring-zinc-300 transition transform duration-500"
         />
       </Link>
       <p className="prose-lg text-center pt-4">{siteMetadata.author}</p>

@@ -65,7 +65,7 @@ export default function HomePage({ articles, mostCommonTag }) {
       .map((article, index) => (
         <div
           key={index}
-          className="p-4 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-sm hover:shadow-md dark:shadow-zinc-700 transition px-6"
+          className="p-4 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-xs hover:shadow-md dark:shadow-zinc-700 transition px-6"
         >
           <Link href={article.slug}>
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 py-1">
@@ -153,7 +153,7 @@ export default function HomePage({ articles, mostCommonTag }) {
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => handleSearch(e.target.value)}
-                  className="w-full p-2 border border-zinc-300 dark:border-zinc-600 rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500"
+                  className="w-full p-2 border border-zinc-300 dark:border-zinc-600 rounded-md shadow-xs  focus:outline-hidden focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500"
                 />
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

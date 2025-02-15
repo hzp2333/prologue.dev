@@ -44,7 +44,7 @@ const MobileNav = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <MenuItems className="absolute rounded-md bg-white/90 dark:bg-black/90 backdrop-blur shadow-lg z-50 w-20 px-2">
+        <MenuItems className="absolute rounded-md bg-white/90 dark:bg-black/90 backdrop-blur-sm shadow-lg z-50 w-20 px-2">
           <div className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-300 text-sm divide-y divide-zinc-50 dark:divide-zinc-700">
             {headerNavLinks.map((link) => {
               return (

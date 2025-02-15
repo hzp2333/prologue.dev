@@ -18,7 +18,7 @@ export default function Pagination({ totalPages, currentPage }) {
              >
             <button
               rel="previous"
-              className="transform hover:text-zinc-600 hover:dark:text-zinc-300"
+              className="transform hover:text-zinc-600 dark:hover:text-zinc-300"
             >
               Previous
             </button>
@@ -34,7 +34,7 @@ export default function Pagination({ totalPages, currentPage }) {
         )}
         {nextPage && (
           <Link href={`/blog/page/${currentPage + 1}`} passHref >
-            <button rel="next" className="transform hover:text-zinc-600 hover:dark:text-zinc-300">
+            <button rel="next" className="transform hover:text-zinc-600 dark:hover:text-zinc-300">
               Next
             </button>
           </Link>

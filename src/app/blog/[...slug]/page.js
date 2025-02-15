@@ -156,7 +156,7 @@ export default async function PostPage(props) {
                 width={1920}
                 height={1080}
                 alt={"featured image " + post.title}
-                className="inset-0 rounded-xl ring-1 ring-inset ring-zinc-900/10 my-2 drop-shadow-sm shadow-sm"
+                className="inset-0 rounded-xl ring-1 ring-inset ring-zinc-900/10 my-2 drop-shadow-xs shadow-xs"
               />
             ) : null}
             {post.imageDesc != "" ? <p className="text-zinc-500 dark:text-zinc-300">{post.imageDesc}</p>: null}

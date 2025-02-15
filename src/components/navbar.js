@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`top-0 py-2 sticky z-10 bg-white dark:bg-black backdrop-blur bg-opacity-[88.6%] border-b border-zinc-50 dark:border-zinc-800 px-4`}
+      className={`top-0 py-2 sticky z-10 bg-white dark:bg-black backdrop-blur-sm bg-opacity-[88.6%] border-b border-zinc-50 dark:border-zinc-800 px-4`}
     >
       <div className="max-w-7xl mx-auto items-center flex justify-between">
         <div>
